@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>XMNA</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link href='http://fonts.googleapis.com/css?family=Raleway:500,300,400|Raleway+Dots' rel='stylesheet' type='text/css'>
+<link href='resources/tipper/jquery.fs.tipper.min.css' rel='stylesheet' type='text/css'>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="resources/masonry/masonry.js"></script>
+</head>
+
+<body>
+<div id="plecaFondo"></div>
+<div id="logo" style="background-color:#FFF;"><a href="index.html" id="homeL"><img src="logo.png"/></a></div>
+
+<!--<div id="menu">
+<ul>
+<li><a href="javascript:void(0)" id="linkImagen">IMAGEN</a></li>
+<li id="liNovias"><a href="javascript:void(0)" id="linkNovias">NOVIAS</a></li>
+<li><a href="javascript:void(0)" id="linkEventos">EVENTOS</a></li>
+<li><a href="javascript:void(0)" id="linkContacto">CONTACTO</a></li>
+</ul>
+</div>-->
+
+<div id="contFotos">
+<div class="grande"></div>
+<div class="chico" style="background-image:url(imgsNovias/1.jpg);background-size:auto 120%"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+<div class="chico"></div>
+</div>
+
+</body>
+
+<script>
+
+/*var container = document.querySelector('#contFotos');
+var msnry = new Masonry( container, {
+  // options
+  //columnWidth: 302,
+  itemSelector: '.item'
+});
+
+var msnry = new Masonry( '#contFotos', {
+  // options
+});*/
+
+$(document).scroll(function(){
+							
+							if($(this).scrollLeft() >= 1){
+								$(this).scrollLeft(0);
+							}
+							
+							
+
+						   
+						   var aLimite = 95;
+						   
+						   if($(document).scrollTop() < aLimite){
+						   $("#menu").children("ul").children("li").css("margin-right", 30 + ($(document).scrollTop()*0.3));
+						    $("#menu").children("ul").children("#liNovias").css("margin-right", 30 + ($(document).scrollTop()*2.9));
+						   $("#menu").css("margin-left", -230 - ($(document).scrollTop()*1.55));
+						   $("#menu").css("top", 130 - $(document).scrollTop());
+						   }
+						   else{
+							   $("#menu").children("ul").children("li").css("margin-right", 30 + (aLimite*0.3));
+						    $("#menu").children("ul").children("#liNovias").css("margin-right", 30 + (aLimite*2.9));
+						   $("#menu").css("margin-left", (-230 - aLimite*1.55));
+						   $("#menu").css("top", 130 - aLimite);
+						   }
+							});
+</script>
+
+</html>

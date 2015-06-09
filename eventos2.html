@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>XMNA</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="stylesheet" href="resources/colorbox/colorbox.css"/>
+<link href='http://fonts.googleapis.com/css?family=Raleway:500,300,400|Raleway+Dots' rel='stylesheet' type='text/css'>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="masonry.js"></script>
+<script src="resources/colorbox/jquery.colorbox.js"></script>
+
+<style>
+    .chico{
+        padding:0;
+    }
+</style>
+    
+</head>
+
+<body>
+<div id="plecaFondo"></div>
+<div id="logo" style="background-color:#FFF;"><a href="index.html" id="homeL"><img src="logo.png"/></a></div>
+
+<!--<div id="menu">
+<ul>
+<li><a href="javascript:void(0)" id="linkImagen">IMAGEN</a></li>
+<li id="liNovias"><a href="javascript:void(0)" id="linkNovias">NOVIAS</a></li>
+<li><a href="javascript:void(0)" id="linkEventos">EVENTOS</a></li>
+<li><a href="javascript:void(0)" id="linkContacto">CONTACTO</a></li>
+</ul>
+</div>-->
+
+<div id="contFotos">
+<a href="imgsEventos/1.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/1.jpg);background-size:auto 120%"></div></a>
+<a href="imgsEventos/2.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/2.jpg);background-size:100% auto"></div></a>
+<a href="imgsEventos/3.jpg" class="galNov"><div class="chico dobleVer" style="background-image:url(imgsEventos/3.jpg);background-size:auto 120%;background-position:-40px"></div></a>
+<div class="chico grande" style="padding:30px;width:340px; height:340px;background-color:#321d48;text-align:center;line-height:340px"><span class="titulo" style="border-color:#FFF;color:#FFF;">EVENTOS</span></div>
+<a href="imgsEventos/8.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/8.jpg);background-size:100% auto"></div></a>
+<a href="imgsEventos/5.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/5.jpg);background-size:100% auto"></div></a>
+<a href="imgsEventos/6.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/6.jpg);background-size:100% auto"></div></a>
+<a href="imgsEventos/7.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/7.jpg);background-size:100% auto"></div></a>
+<!--<a href="imgsEventos/4.jpg" class="galNov"><div class="chico" style="background-image:url(imgsEventos/4.jpg);background-size:100% auto"></div></a>-->
+</div>
+
+</body>
+
+<script>
+
+var container = document.querySelector('#contFotos');
+var msnry = new Masonry( container, {
+  // options
+  columnWidth: 200,
+  itemSelector: '.chico'
+});
+
+$(".galNov").colorbox({rel:'galNov'});
+
+$(document).ready(function(){
+						   $("#report-abuse").css("display","none");
+						   $(".chico").hover(function(){
+													   $(this).animate({opacity:"0.7"},100);
+													   },function(){
+														 $(this).animate({opacity:"1.0"},100);
+													   });
+                            $(".dobleHor").hover(function(){
+													   $(this).animate({opacity:"0.7"},100);
+													   },function(){
+														 $(this).animate({opacity:"1.0"},100);
+													   });
+                            $(".grande").hover(function(){
+													   $(this).animate({opacity:"0.7"},100);
+													   },function(){
+														 $(this).animate({opacity:"1.0"},100);
+													   });
+						   });
+
+$(".galNov").colorbox({rel:'galNov'});
+
+$(document).ready(function(){
+						   $("#report-abuse").css("display","none");
+						   $(".chico").hover(function(){
+													   $(this).animate({opacity:"0.7"},100);
+													   },function(){
+														 $(this).animate({opacity:"1.0"},100);
+													   });
+						   });
+
+$(document).scroll(function(){
+							
+							if($(this).scrollLeft() >= 1){
+								$(this).scrollLeft(0);
+							}
+							
+							
+
+						   
+						   var aLimite = 95;
+						   
+						   if($(document).scrollTop() < aLimite){
+						   $("#menu").children("ul").children("li").css("margin-right", 30 + ($(document).scrollTop()*0.3));
+						    $("#menu").children("ul").children("#liNovias").css("margin-right", 30 + ($(document).scrollTop()*2.9));
+						   $("#menu").css("margin-left", -230 - ($(document).scrollTop()*1.55));
+						   $("#menu").css("top", 130 - $(document).scrollTop());
+						   }
+						   else{
+							   $("#menu").children("ul").children("li").css("margin-right", 30 + (aLimite*0.3));
+						    $("#menu").children("ul").children("#liNovias").css("margin-right", 30 + (aLimite*2.9));
+						   $("#menu").css("margin-left", (-230 - aLimite*1.55));
+						   $("#menu").css("top", 130 - aLimite);
+						   }
+							});
+</script>
+
+</html>
